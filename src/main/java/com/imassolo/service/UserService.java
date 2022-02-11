@@ -1,6 +1,7 @@
 package com.imassolo.service;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
@@ -13,19 +14,19 @@ import java.util.Queue;
 public class UserService {
 
 	private HashMap<Long, Queue<LocalTime>> usersMap;
-	private FoaaService foaaService;
+	private FoaasService foaasService;
 
-	public UserService(FoaaService foaaService) {
+	public UserService(FoaasService foaasService) {
 		this.usersMap = new HashMap<>();
-		this.foaaService = foaaService;
+		this.foaasService = foaasService;
 	}
 
-	public void getMessage(Long userId) {
+	public ResponseEntity<String> getMessage(Long userId) {
 		if(usersMap.containsKey(userId)){
 			Queue<LocalTime> lastAccesses = usersMap.get(userId);
 			if(lastAccesses.size()>=5){
 				if(lastAccesses.peek().until(LocalTime.now(), ChronoUnit.SECONDS) <= 10){
-					throw new RuntimeException("No se puede bro");
+					return ResponseEntity.status(HttpStatus.LOCKED).body("User is locked.");
 				}
 				lastAccesses.remove();
 			}
@@ -36,7 +37,8 @@ public class UserService {
 			usersMap.put(userId, newQueue);
 		}
 
-		//TODO llamar al fooas
+		return foaasService.getFoaasMessage();
+
 	}
 
 }
