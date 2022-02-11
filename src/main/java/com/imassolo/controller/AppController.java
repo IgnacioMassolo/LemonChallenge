@@ -12,6 +12,10 @@ public class AppController {
 
 	private UserService userService;
 
+	public AppController(UserService userService) {
+		this.userService = userService;
+	}
+
 	@RequestMapping(value = "/message", method = RequestMethod.GET)
 	public void getMessage(@RequestParam Long userId) {
 		userService.getMessage(userId);
