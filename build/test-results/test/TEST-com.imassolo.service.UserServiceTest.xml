@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.imassolo.service.UserServiceTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-02-12T15:37:07" hostname="MBP-de-Nacho.fibertel.com.ar" time="11.046">
+  <properties/>
+  <testcase name="when_2_new_users_makes_5_request_each_must_process_all()" classname="com.imassolo.service.UserServiceTest" time="0.028"/>
+  <testcase name="when_2_new_users_makes_6_request_each_must_process_reject_2()" classname="com.imassolo.service.UserServiceTest" time="0.003"/>
+  <testcase name="when_new_user_makes_5_request_must_process_all()" classname="com.imassolo.service.UserServiceTest" time="0.001"/>
+  <testcase name="when_a_new_user_is_locked_after_10_seconds_must_process_again()" classname="com.imassolo.service.UserServiceTest" time="11.007"/>
+  <testcase name="when_new_user_arrives_must_process()" classname="com.imassolo.service.UserServiceTest" time="0.002"/>
+  <testcase name="when_new_user_makes_6_request_must_reject_the_last()" classname="com.imassolo.service.UserServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

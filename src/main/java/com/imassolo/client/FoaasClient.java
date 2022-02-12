@@ -1,4 +1,4 @@
-package com.imassolo.service;
+package com.imassolo.client;
 
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -7,13 +7,13 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Collections;
 
 @Service
-public class FoaasService {
+public class FoaasClient {
 
     private static final String URL = "https://foaas.com/everyone/Ghandi";
     private static final String USER_AGENT = "user-agent";
     private static final String APPLICATION = "application";
 
-    public FoaasService(){}
+    public FoaasClient(){}
 
     public ResponseEntity<String> getFoaasMessage() {
         RestTemplate restTemplate = new RestTemplate();

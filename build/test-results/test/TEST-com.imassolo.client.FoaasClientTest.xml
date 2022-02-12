@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.imassolo.client.FoaasClientTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-12T15:37:05" hostname="MBP-de-Nacho.fibertel.com.ar" time="1.788">
+  <properties/>
+  <testcase name="when_calling_foaas_must_process()" classname="com.imassolo.client.FoaasClientTest" time="1.788"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

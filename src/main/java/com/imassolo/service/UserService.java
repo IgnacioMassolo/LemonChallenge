@@ -1,5 +1,6 @@
 package com.imassolo.service;
 
+import com.imassolo.client.FoaasClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,11 +15,11 @@ import java.util.Queue;
 public class UserService {
 
 	private final HashMap<Long, Queue<LocalTime>> usersMap;
-	private final FoaasService foaasService;
+	private final FoaasClient foaasClient;
 
-	public UserService(FoaasService foaasService) {
+	public UserService(FoaasClient foaasClient) {
 		this.usersMap = new HashMap<>();
-		this.foaasService = foaasService;
+		this.foaasClient = foaasClient;
 	}
 
 	public ResponseEntity<String> getMessage(Long userId) {
@@ -37,7 +38,7 @@ public class UserService {
 			usersMap.put(userId, newQueue);
 		}
 
-		return foaasService.getFoaasMessage();
+		return foaasClient.getFoaasMessage();
 
 	}
 

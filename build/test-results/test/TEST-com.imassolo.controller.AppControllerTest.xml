@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.imassolo.controller.AppControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-12T15:37:07" hostname="MBP-de-Nacho.fibertel.com.ar" time="0.375">
+  <properties/>
+  <testcase name="when_new_request_comes_must_process()" classname="com.imassolo.controller.AppControllerTest" time="0.375"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
