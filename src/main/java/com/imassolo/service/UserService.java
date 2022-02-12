@@ -13,8 +13,8 @@ import java.util.Queue;
 @Service
 public class UserService {
 
-	private HashMap<Long, Queue<LocalTime>> usersMap;
-	private FoaasService foaasService;
+	private final HashMap<Long, Queue<LocalTime>> usersMap;
+	private final FoaasService foaasService;
 
 	public UserService(FoaasService foaasService) {
 		this.usersMap = new HashMap<>();
