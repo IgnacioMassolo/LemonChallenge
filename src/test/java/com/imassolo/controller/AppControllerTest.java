@@ -31,4 +31,10 @@ public class AppControllerTest {
         ResponseEntity<String> response = instance.getMessage(userId);
         Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
     }
+
+    @Test
+    public void when_request_without_user_id_comes_must_reject(){
+        ResponseEntity<String> response = instance.getMessage(null);
+        Assertions.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+    }
 }
